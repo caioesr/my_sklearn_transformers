@@ -1,7 +1,7 @@
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.preprocessing import LabelEncoder
 
-class EncoderColumns(LabelEncoder):
+class EncoderColumns(LabelEncoder, BaseEstimator, TransformerMixin):
     def __init__(self, columns):
         self.columns = columns
 
