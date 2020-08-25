@@ -8,7 +8,7 @@ class EncoderColumns(LabelEncoder):
     def fit(self, X, y=None):
         return self
 
-    def transform(self, X, y):
+    def transform(self, X):
         data = X.copy()
         for column in self.columns:
             le = LabelEncoder()
@@ -30,3 +30,4 @@ class DropColumns(BaseEstimator, TransformerMixin):
         data = X.copy()
         # Retornamos um novo dataframe sem as colunas indesejadas
         return data.drop(labels=self.columns, axis='columns')
+
