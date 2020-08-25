@@ -12,9 +12,9 @@ class EncoderColumns(LabelEncoder):
         data = X.copy()
         for column in self.columns:
             le = LabelEncoder()
-            X[column] = le.fit_transform(X_train[column])
+            data[column] = le.fit_transform(data[column])
 
-        return X
+        return data
 
 
 # All sklearn Transforms must have the `transform` and `fit` methods
